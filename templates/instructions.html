@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="background-color: lightblue; padding: 20px;">
+    <h1 style="text-align: center">Recipe Instructions</h1>
+
+    {% if instructions %}
+      <div style="background-color: olivedrab; color: white; padding: 10px; border-radius: 10px;">
+        <ol style="list-style-type: decimal; padding-left: 20px;">
+          {% for step in instructions[0].steps %}
+            <li style="margin-bottom: 10px;">{{ step.step }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% else %}
+      <p>There are no instructions available for this recipe.</p>
+    {% endif %}
+  </div>
+{% endblock %}

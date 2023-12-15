@@ -1,0 +1,10 @@
+# Description of your program (part 7)
+This program is the first homework for the class, in which I put in variables to
+calculate the area of something. I also put my name in the program. Not really
+too much going on here.
+
+# Reflection on writing your program (part 8)
+I struggled a bit with Git at first but was able to open up the homework in the
+end which was good. I also haven't used python and Git in a bit, so it was nice to get
+a refresher on what to do. I don't know how long this is supposed to be, so here's some
+more words to make it look longer.

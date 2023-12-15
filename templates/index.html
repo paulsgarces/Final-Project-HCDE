@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="text-align: center; background-color: lightblue; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color: olivedrab; padding: 20px;">
+      <h1 style="color: white;">Recipe Search</h1>
+      <p style="color: white;">This website allows you to search for recipes based on
+        ingredients in your pantry, while also providing the steps to the recipe.</p>
+      <form action="{{ url_for('results') }}" method="post">
+        <label for="ingredients" style="color: white;">Enter ingredients (comma-separated format):</label>
+        <br>
+        <input type="text" id="ingredients" name="ingredients" required style="width: 300px; padding: 10px;">
+        <br>
+        <button type="submit" style="background-color: white; color: green; padding: 10px; border: none; cursor: pointer;">Search</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

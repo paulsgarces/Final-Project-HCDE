@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="text-align: center; background-color: lightblue; padding: 20px;">
+    <h1 style="color: black;">Recipe Results - Enjoy!</h1>
+
+    {% if recipes %}
+      {% for recipe in recipes %}
+        <div class="recipe" style="background-color: olivedrab; margin-bottom: 20px; padding: 20px; color: white;">
+          <h2>{{ recipe.title }}</h2>
+          <p>Rqeuired Ingredients Based on Search Criteria:</p>
+          <ul style="text-align: center;">
+            {% for ingredient in recipe.usedIngredients %}
+              <li>{{ ingredient.original }}</li>
+            {% endfor %}
+          </ul>
+          <br>
+          <img src="{{ recipe.image }}" alt="Image of Finished Recipe" style="max-width: 100%; height: auto;">
+          <p></p>
+          <a href="{{ url_for('get_instructions', recipe_id=recipe.id) }}" style="color: white;">Get Instructions</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>Sorry, however no recipies were found for the ingredients you want to use.</p>
+    {% endif %}
+  </div>
+{% endblock %}
